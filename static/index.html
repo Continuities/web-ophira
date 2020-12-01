@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="bundle.js" defer></script>
+    <style type="text/css">
+      html {
+        box-sizing: border-box;
+      }
+      *, *::before, *::after {
+        box-sizing: inherit;
+      }
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: black;
+      }
+      .controls {
+        width: 600px;
+        background: white;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='controls'>
+      <slider-bar></slider-bar>
+    </div>
+  </body>
+</html>

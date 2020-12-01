@@ -1,0 +1,19 @@
+{
+  "name": "web-ophira",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Michael Townsend <michael@doublespeakgames.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack serve --config webpack.config.cjs --mode development --devtool inline-source-map --hot $EXTRA_WEBPACK_DEV_SERVER_ARGS",
+    "build": "webpack --config webpack.config.cjs --mode=production"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.3.2",
+    "webpack": "^5.9.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
