@@ -107,7 +107,8 @@ class SpinDial extends HTMLElement {
       el.className = 'dial-value';
       el.innerHTML = `<span class='value-label' style='transform:rotate(${v.rot > 90 && v.rot < 270 ? 180 : 0}deg)'>${v.label}</span>`;
       el.style.transform = `rotate(${v.rot}deg)`;
-      el.querySelector('.value-label').addEventListener('click', () => {
+      const label = el.querySelector('.value-label');
+      label.addEventListener('click', () => {
         this.value = v.value;
       });
       fragment.appendChild(el);
@@ -118,6 +119,10 @@ class SpinDial extends HTMLElement {
     const shadowRoot = this.attachShadow({ mode: 'open' });
     shadowRoot.appendChild(tmpl.content.cloneNode(true));
     shadowRoot.querySelector('.labels').appendChild(fragment);
+
+    const margin = [...shadowRoot.querySelectorAll('.value-label')].reduce((acc, curr) => Math.max(acc, curr.getBoundingClientRect().width), 0) + 15;
+    shadowRoot.querySelector('.wrapper').style.margin = `${margin}px`;
+
     const value = parseFloat(this.getAttribute('value')) || 0;
     updateDial(this, value);
 
