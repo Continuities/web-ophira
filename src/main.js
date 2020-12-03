@@ -1,9 +1,15 @@
 import SliderBar from './slider-bar.js';
+import SpinDial from './spin-dial.js';
 
 customElements.define('slider-bar', SliderBar);
+customElements.define('spin-dial', SpinDial);
 
 const bar = document.querySelector('slider-bar');
-console.log(bar);
 bar.addEventListener('change', e => {
-  console.log(e.target.value);
+  console.log('SLIDER', e.target.value);
+});
+
+const dial = document.querySelector('spin-dial');
+dial.addEventListener('change', e => {
+  console.log('DIAL', e.target.value);
 });
