@@ -14,12 +14,18 @@ module.exports = {
       ]
     })
   ],
+  module: {
+    rules: [{
+      test: /\.ogg/,
+      type: 'asset/resource'
+    }]
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, 'static'),
     compress: true,
     port: 9000
   }
