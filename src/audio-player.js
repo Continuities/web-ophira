@@ -1,7 +1,7 @@
 
 const AudioPlayer = () => {
   const context = new AudioContext();
-  const track = loadAudio('music.ogg', context);
+  const track = loadAudio('denial.ogg', context);
   document.body.addEventListener('click', function startContext() {
     document.body.removeEventListener('click', startContext);
     // check if context is in suspended state (autoplay policy)
